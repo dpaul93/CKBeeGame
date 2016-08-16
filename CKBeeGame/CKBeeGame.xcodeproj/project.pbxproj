@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		487E27D51D6355D00026326B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27D41D6355D00026326B /* main.m */; };
 		487E27D81D6355D00026326B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27D71D6355D00026326B /* AppDelegate.m */; };
-		487E27DB1D6355D00026326B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27DA1D6355D00026326B /* ViewController.m */; };
 		487E27DE1D6355D00026326B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487E27DC1D6355D00026326B /* Main.storyboard */; };
 		487E27E01D6355D00026326B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487E27DF1D6355D00026326B /* Assets.xcassets */; };
 		487E27E31D6355D00026326B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487E27E11D6355D00026326B /* LaunchScreen.storyboard */; };
 		487E27EE1D6355D00026326B /* CKBeeGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27ED1D6355D00026326B /* CKBeeGameTests.m */; };
+		487E27FF1D63584D0026326B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27FE1D63584D0026326B /* GameViewController.m */; };
+		487E28021D635D800026326B /* BaseBee.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E28011D635D800026326B /* BaseBee.m */; };
+		487E28051D635E750026326B /* DroneBee.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E28041D635E750026326B /* DroneBee.m */; };
+		487E28081D635E830026326B /* WorkerBee.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E28071D635E830026326B /* WorkerBee.m */; };
+		487E280B1D635E950026326B /* QueenBee.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E280A1D635E950026326B /* QueenBee.m */; };
+		487E280E1D635EAE0026326B /* BeeDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E280D1D635EAE0026326B /* BeeDataProvider.m */; };
+		487E28111D63704E0026326B /* BaseBee+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E28101D63704E0026326B /* BaseBee+Protected.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +37,6 @@
 		487E27D41D6355D00026326B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		487E27D61D6355D00026326B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		487E27D71D6355D00026326B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		487E27D91D6355D00026326B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		487E27DA1D6355D00026326B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		487E27DD1D6355D00026326B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		487E27DF1D6355D00026326B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		487E27E21D6355D00026326B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +44,20 @@
 		487E27E91D6355D00026326B /* CKBeeGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CKBeeGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		487E27ED1D6355D00026326B /* CKBeeGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKBeeGameTests.m; sourceTree = "<group>"; };
 		487E27EF1D6355D00026326B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487E27FD1D63584D0026326B /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		487E27FE1D63584D0026326B /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		487E28001D635D800026326B /* BaseBee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBee.h; sourceTree = "<group>"; };
+		487E28011D635D800026326B /* BaseBee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBee.m; sourceTree = "<group>"; };
+		487E28031D635E750026326B /* DroneBee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DroneBee.h; sourceTree = "<group>"; };
+		487E28041D635E750026326B /* DroneBee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DroneBee.m; sourceTree = "<group>"; };
+		487E28061D635E830026326B /* WorkerBee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkerBee.h; sourceTree = "<group>"; };
+		487E28071D635E830026326B /* WorkerBee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkerBee.m; sourceTree = "<group>"; };
+		487E28091D635E950026326B /* QueenBee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueenBee.h; sourceTree = "<group>"; };
+		487E280A1D635E950026326B /* QueenBee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueenBee.m; sourceTree = "<group>"; };
+		487E280C1D635EAE0026326B /* BeeDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeDataProvider.h; sourceTree = "<group>"; };
+		487E280D1D635EAE0026326B /* BeeDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeDataProvider.m; sourceTree = "<group>"; };
+		487E280F1D63704E0026326B /* BaseBee+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseBee+Protected.h"; sourceTree = "<group>"; };
+		487E28101D63704E0026326B /* BaseBee+Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseBee+Protected.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +101,9 @@
 			children = (
 				487E27D61D6355D00026326B /* AppDelegate.h */,
 				487E27D71D6355D00026326B /* AppDelegate.m */,
-				487E27D91D6355D00026326B /* ViewController.h */,
-				487E27DA1D6355D00026326B /* ViewController.m */,
+				487E27FB1D63584D0026326B /* Models */,
+				487E27FC1D63584D0026326B /* ViewControllers */,
 				487E27DC1D6355D00026326B /* Main.storyboard */,
-				487E27DF1D6355D00026326B /* Assets.xcassets */,
-				487E27E11D6355D00026326B /* LaunchScreen.storyboard */,
-				487E27E41D6355D00026326B /* Info.plist */,
 				487E27D31D6355D00026326B /* Supporting Files */,
 			);
 			path = CKBeeGame;
@@ -97,6 +112,9 @@
 		487E27D31D6355D00026326B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				487E27DF1D6355D00026326B /* Assets.xcassets */,
+				487E27E11D6355D00026326B /* LaunchScreen.storyboard */,
+				487E27E41D6355D00026326B /* Info.plist */,
 				487E27D41D6355D00026326B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -109,6 +127,34 @@
 				487E27EF1D6355D00026326B /* Info.plist */,
 			);
 			path = CKBeeGameTests;
+			sourceTree = "<group>";
+		};
+		487E27FB1D63584D0026326B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				487E28001D635D800026326B /* BaseBee.h */,
+				487E28011D635D800026326B /* BaseBee.m */,
+				487E280F1D63704E0026326B /* BaseBee+Protected.h */,
+				487E28101D63704E0026326B /* BaseBee+Protected.m */,
+				487E28031D635E750026326B /* DroneBee.h */,
+				487E28041D635E750026326B /* DroneBee.m */,
+				487E28061D635E830026326B /* WorkerBee.h */,
+				487E28071D635E830026326B /* WorkerBee.m */,
+				487E28091D635E950026326B /* QueenBee.h */,
+				487E280A1D635E950026326B /* QueenBee.m */,
+				487E280C1D635EAE0026326B /* BeeDataProvider.h */,
+				487E280D1D635EAE0026326B /* BeeDataProvider.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		487E27FC1D63584D0026326B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				487E27FD1D63584D0026326B /* GameViewController.h */,
+				487E27FE1D63584D0026326B /* GameViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +257,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				487E27DB1D6355D00026326B /* ViewController.m in Sources */,
+				487E28081D635E830026326B /* WorkerBee.m in Sources */,
 				487E27D81D6355D00026326B /* AppDelegate.m in Sources */,
+				487E280B1D635E950026326B /* QueenBee.m in Sources */,
+				487E27FF1D63584D0026326B /* GameViewController.m in Sources */,
 				487E27D51D6355D00026326B /* main.m in Sources */,
+				487E28111D63704E0026326B /* BaseBee+Protected.m in Sources */,
+				487E280E1D635EAE0026326B /* BeeDataProvider.m in Sources */,
+				487E28051D635E750026326B /* DroneBee.m in Sources */,
+				487E28021D635D800026326B /* BaseBee.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
