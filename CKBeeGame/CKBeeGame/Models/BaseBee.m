@@ -12,7 +12,7 @@ NSString * const kBeeLifespanDidChangeNotification = @"BeeLifespanDidChangeNotif
 
 @implementation BaseBee
 
-@synthesize lifespan = pLifespan;
+@synthesize lifespan = pLifespan, imageName = pImageName;
 
 #pragma mark - Base Methods
 

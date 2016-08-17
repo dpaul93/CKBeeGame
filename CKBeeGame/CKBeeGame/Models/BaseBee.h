@@ -19,8 +19,10 @@ extern NSString * const kBeeLifespanDidChangeNotification;
 @interface BaseBee : NSObject <BaseBeeInterface> {
 @protected
     NSInteger pLifespan;
+    NSString *pImageName;
 }
 
 @property (assign, nonatomic, readonly) NSInteger lifespan;
+@property (strong, nonatomic, readonly) NSString *imageName;
 
 @end
