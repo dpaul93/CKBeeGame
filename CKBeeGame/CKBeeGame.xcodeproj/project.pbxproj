@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4807FFDD1D645E3300E9A278 /* LifespanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4807FFDC1D645E3300E9A278 /* LifespanView.m */; };
 		487E27D51D6355D00026326B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27D41D6355D00026326B /* main.m */; };
 		487E27D81D6355D00026326B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27D71D6355D00026326B /* AppDelegate.m */; };
 		487E27DE1D6355D00026326B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487E27DC1D6355D00026326B /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4807FFDB1D645E3300E9A278 /* LifespanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifespanView.h; sourceTree = "<group>"; };
+		4807FFDC1D645E3300E9A278 /* LifespanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifespanView.m; sourceTree = "<group>"; };
 		487E27D01D6355D00026326B /* CKBeeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKBeeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487E27D41D6355D00026326B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		487E27D61D6355D00026326B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 			children = (
 				487E28161D63885E0026326B /* BeeView.h */,
 				487E28171D63885E0026326B /* BeeView.m */,
+				4807FFDB1D645E3300E9A278 /* LifespanView.h */,
+				4807FFDC1D645E3300E9A278 /* LifespanView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				487E280E1D635EAE0026326B /* BeeDataProvider.m in Sources */,
 				487E28051D635E750026326B /* DroneBee.m in Sources */,
 				487E28141D63825C0026326B /* BeeLifecycleGameHandler.m in Sources */,
+				4807FFDD1D645E3300E9A278 /* LifespanView.m in Sources */,
 				487E28021D635D800026326B /* BaseBee.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +480,7 @@
 				487E27F41D6355D00026326B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		487E27F51D6355D00026326B /* Build configuration list for PBXNativeTarget "CKBeeGameTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +489,7 @@
 				487E27F71D6355D00026326B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
