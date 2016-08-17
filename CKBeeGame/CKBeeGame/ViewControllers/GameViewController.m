@@ -13,7 +13,7 @@
 
 @interface GameViewController () <BeeLifecycleGameHandlerDelegate>
 
-@property (strong, nonatomic) IBOutlet BeeLifecycleGameHandler *gameHandler;
+@property (weak, nonatomic) IBOutlet UIButton *hitButton;
 @property (strong, nonatomic) NSMutableArray *beeViews;
 
 @end
@@ -46,7 +46,8 @@
 }
 
 -(void)beeLifecycleHandlerDidUpdateData:(BeeLifecycleGameHandler *)handler {
-    [self redrawBees];
+    self.hitButton.enabled = NO;
+    [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(redrawBees) userInfo:nil repeats:NO];
 }
 
 #pragma mark - Actions
@@ -79,6 +80,8 @@
             y += beeSquareSize;
         }
     }
+    
+    self.hitButton.enabled = YES;
 }
 
 -(BeeView*)beeViewFromViewsArrayWithBee:(BaseBee*)bee {
