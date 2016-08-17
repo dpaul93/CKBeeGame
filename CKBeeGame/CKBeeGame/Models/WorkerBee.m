@@ -16,6 +16,7 @@
 -(instancetype)init {
     if(self = [super init]) {
         pLifespan = 75;
+        pImageName = @"workerBee";
     }
     
     return self;
