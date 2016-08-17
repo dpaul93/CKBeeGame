@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "BeeLifecycleGameHandler.h"
 #import "BeeView.h"
+#import "BaseBee.h"
 
 @interface GameViewController () <BeeLifecycleGameHandlerDelegate>
 
@@ -29,15 +30,23 @@
 #pragma mark - BeeLifecycleGameHandler Delegate
 
 -(void)beeLifecycleHandler:(BeeLifecycleGameHandler *)handler didUpdateBeeLifespan:(BaseBee *)bee {
-    
+    BeeView *view = [self beeViewFromViewsArrayWithBee:bee];
+    view.lifespan = bee.lifespan;
 }
 
 -(void)beeLifecycleHandler:(BeeLifecycleGameHandler *)handler beeLifespanDidEnd:(BaseBee *)bee {
-    
+    BeeView *view = [self beeViewFromViewsArrayWithBee:bee];
+    [self.beeViews removeObject:view];
+    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+        view.frame = CGRectOffset(view.frame, 0.0f, CGRectGetHeight(self.view.bounds));
+        view.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [view removeFromSuperview];
+    }];
 }
 
--(void)beeLifcycleHandlerDidUpdateData:(BeeLifecycleGameHandler *)handler {
-    
+-(void)beeLifecycleHandlerDidUpdateData:(BeeLifecycleGameHandler *)handler {
+    [self redrawBees];
 }
 
 #pragma mark - Actions
@@ -61,14 +70,11 @@
         BeeView *view = [[BeeView alloc] initWithBee:currentBee];
         view.frame = CGRectMake(x, y, beeSquareSize, beeSquareSize);
         [self.view addSubview:view];
-        
-        view.layer.borderColor = [UIColor blueColor].CGColor;
-        view.layer.borderWidth = 2;
-        
+                
         [self.beeViews addObject:view];
         
         x += beeSquareSize;
-        if(i > 0 && i % horizontalRowCount == 0) {
+        if((i + 1) % horizontalRowCount == 0) {
             x = 0;
             y += beeSquareSize;
         }
