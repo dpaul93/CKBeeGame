@@ -39,6 +39,7 @@
 
 -(void)beeLifespanDidChangeNotification:(NSNotification*)notification {
     BaseBee *bee = notification.object;
+    [self updateLifespanOfBee:bee];
     if(bee.lifespan <= 0) {
         [self endBeeLifespan:bee];
         if([bee isKindOfClass:[QueenBee class]]) {
@@ -49,8 +50,6 @@
                 [self updateData];
             }
         }
-    } else {
-        [self updateLifespanOfBee:bee];
     }
 }
 
@@ -89,8 +88,8 @@
 
 -(void)updateData {
     [self.provider updateData];
-    if([self.delegate respondsToSelector:@selector(beeLifcycleHandlerDidUpdateData:)]) {
-        [self.delegate beeLifcycleHandlerDidUpdateData:self];
+    if([self.delegate respondsToSelector:@selector(beeLifecycleHandlerDidUpdateData:)]) {
+        [self.delegate beeLifecycleHandlerDidUpdateData:self];
     }
 }
 

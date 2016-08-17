@@ -29,6 +29,6 @@
 @optional
 -(void)beeLifecycleHandler:(BeeLifecycleGameHandler*)handler didUpdateBeeLifespan:(BaseBee*)bee;
 -(void)beeLifecycleHandler:(BeeLifecycleGameHandler*)handler beeLifespanDidEnd:(BaseBee*)bee;
--(void)beeLifcycleHandlerDidUpdateData:(BeeLifecycleGameHandler*)handler;
+-(void)beeLifecycleHandlerDidUpdateData:(BeeLifecycleGameHandler*)handler;
 
 @end
