@@ -18,35 +18,7 @@ typedef NS_ENUM(NSInteger, BeeDataProviderBeeTypeCount) {
     BeeDataProviderBeeTypeCountTotal = BeeDataProviderBeeTypeCountQueen + BeeDataProviderBeeTypeCountDrone + BeeDataProviderBeeTypeCountWorker
 };
 
-@interface BeeDataProvider()
-
-@property (strong, nonatomic, readwrite) NSArray *bees;
-
-@end
-
 @implementation BeeDataProvider
-
-#pragma mark - Initialization
-
--(instancetype)init {
-    if(self = [super init]) {
-        [self updateData];
-    }
-    
-    return self;
-}
-
-#pragma mark - External Methods
-
--(void)removeBee:(BaseBee *)bee {
-    NSMutableArray *temp = self.bees.mutableCopy;
-    [temp removeObject:bee];
-    self.bees = temp;
-}
-
--(void)updateData {
-    self.bees = [self generateBees];
-}
 
 #pragma mark - Internal Methods
 

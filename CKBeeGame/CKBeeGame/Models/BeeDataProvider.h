@@ -8,13 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class BaseBee;
-
 @interface BeeDataProvider : NSObject
 
-@property (strong, nonatomic, readonly) NSArray *bees;
-
--(void)updateData;
--(void)removeBee:(BaseBee*)bee;
+-(NSArray*)generateBees;
 
 @end
