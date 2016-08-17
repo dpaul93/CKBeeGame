@@ -13,11 +13,7 @@
 #pragma mark - Protected setter
 
 -(void)setLifespan:(NSInteger)lifespan {
-    [self willChangeValueForKey:@"lifespan"];
     pLifespan = lifespan;
-    [self didChangeValueForKey:@"lifespan"];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kBeeLifespanDidChangeNotification object:self];
 }
 
 @end
