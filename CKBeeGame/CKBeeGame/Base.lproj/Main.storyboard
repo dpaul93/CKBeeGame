@@ -44,8 +44,12 @@
                             <constraint firstItem="JAv-Pr-YYz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="IJQ-fe-4FA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gameHandler" destination="f6q-5J-zzR" id="jkt-84-S8g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="f6q-5J-zzR" customClass="BeeLifecycleGameHandler"/>
             </objects>
         </scene>
     </scenes>
