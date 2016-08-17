@@ -25,7 +25,7 @@
 #pragma mark - Overrides
 
 -(void)hitBee {
-    [self setLifespan:self.lifespan - 8];
+    self.lifespan -= 8;
 }
 
 -(NSInteger)maxLifespan {
