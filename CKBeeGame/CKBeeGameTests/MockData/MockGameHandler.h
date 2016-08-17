@@ -8,6 +8,13 @@
 
 #import "BeeLifecycleGameHandler.h"
 
-@interface MockGameHandler : BeeLifecycleGameHandler
+@class BeeDataProvider;
+
+@interface MockGameHandler : BeeLifecycleGameHandler <BeeLifecycleGameHandlerDelegate>
+
+@property (assign, nonatomic) BOOL queenDied;
+
+-(void)hitQueen;
+-(void)updateBeeData;
 
 @end

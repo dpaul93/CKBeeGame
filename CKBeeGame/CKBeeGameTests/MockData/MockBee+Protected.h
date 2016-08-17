@@ -10,4 +10,6 @@
 
 @interface MockBee (Protected)
 
+-(void)setLifespan:(NSInteger)lifespan;
+
 @end

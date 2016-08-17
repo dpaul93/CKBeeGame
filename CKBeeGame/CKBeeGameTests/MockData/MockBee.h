@@ -10,4 +10,6 @@
 
 @interface MockBee : BaseBee
 
+@property (assign, nonatomic) BOOL didChange;
+
 @end

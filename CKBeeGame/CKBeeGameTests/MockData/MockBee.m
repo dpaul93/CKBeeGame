@@ -7,7 +7,12 @@
 //
 
 #import "MockBee.h"
+#import "MockBee+Protected.h"
 
 @implementation MockBee
+
+-(void)hitBee {
+    [self setLifespan:10];
+}
 
 @end

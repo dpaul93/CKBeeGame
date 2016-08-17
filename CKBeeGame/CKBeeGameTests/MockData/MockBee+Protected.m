@@ -10,4 +10,11 @@
 
 @implementation MockBee (Protected)
 
+#pragma mark - Protected setter
+
+-(void)setLifespan:(NSInteger)lifespan {
+    pLifespan = lifespan;
+    self.didChange = YES;
+}
+
 @end
