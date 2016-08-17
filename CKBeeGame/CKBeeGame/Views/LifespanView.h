@@ -10,4 +10,7 @@
 
 @interface LifespanView : UIView
 
+@property (assign, nonatomic) CGFloat maxProgress;
+@property (assign, nonatomic) CGFloat progress;
+
 @end
