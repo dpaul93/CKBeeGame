@@ -20,6 +20,8 @@
 		487E280B1D635E950026326B /* QueenBee.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E280A1D635E950026326B /* QueenBee.m */; };
 		487E280E1D635EAE0026326B /* BeeDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E280D1D635EAE0026326B /* BeeDataProvider.m */; };
 		487E28111D63704E0026326B /* BaseBee+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E28101D63704E0026326B /* BaseBee+Protected.m */; };
+		487E28141D63825C0026326B /* BeeLifecycleGameHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E28131D63825C0026326B /* BeeLifecycleGameHandler.m */; };
+		487E28181D63885E0026326B /* BeeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E28171D63885E0026326B /* BeeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		487E280D1D635EAE0026326B /* BeeDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeDataProvider.m; sourceTree = "<group>"; };
 		487E280F1D63704E0026326B /* BaseBee+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseBee+Protected.h"; sourceTree = "<group>"; };
 		487E28101D63704E0026326B /* BaseBee+Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseBee+Protected.m"; sourceTree = "<group>"; };
+		487E28121D63825C0026326B /* BeeLifecycleGameHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeLifecycleGameHandler.h; sourceTree = "<group>"; };
+		487E28131D63825C0026326B /* BeeLifecycleGameHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeLifecycleGameHandler.m; sourceTree = "<group>"; };
+		487E28161D63885E0026326B /* BeeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeView.h; sourceTree = "<group>"; };
+		487E28171D63885E0026326B /* BeeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 				487E27D61D6355D00026326B /* AppDelegate.h */,
 				487E27D71D6355D00026326B /* AppDelegate.m */,
 				487E27FB1D63584D0026326B /* Models */,
+				487E28151D63884E0026326B /* Views */,
 				487E27FC1D63584D0026326B /* ViewControllers */,
 				487E27DC1D6355D00026326B /* Main.storyboard */,
 				487E27D31D6355D00026326B /* Supporting Files */,
@@ -144,6 +151,8 @@
 				487E280A1D635E950026326B /* QueenBee.m */,
 				487E280C1D635EAE0026326B /* BeeDataProvider.h */,
 				487E280D1D635EAE0026326B /* BeeDataProvider.m */,
+				487E28121D63825C0026326B /* BeeLifecycleGameHandler.h */,
+				487E28131D63825C0026326B /* BeeLifecycleGameHandler.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +164,15 @@
 				487E27FE1D63584D0026326B /* GameViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		487E28151D63884E0026326B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				487E28161D63885E0026326B /* BeeView.h */,
+				487E28171D63885E0026326B /* BeeView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,12 +277,14 @@
 			files = (
 				487E28081D635E830026326B /* WorkerBee.m in Sources */,
 				487E27D81D6355D00026326B /* AppDelegate.m in Sources */,
+				487E28181D63885E0026326B /* BeeView.m in Sources */,
 				487E280B1D635E950026326B /* QueenBee.m in Sources */,
 				487E27FF1D63584D0026326B /* GameViewController.m in Sources */,
 				487E27D51D6355D00026326B /* main.m in Sources */,
 				487E28111D63704E0026326B /* BaseBee+Protected.m in Sources */,
 				487E280E1D635EAE0026326B /* BeeDataProvider.m in Sources */,
 				487E28051D635E750026326B /* DroneBee.m in Sources */,
+				487E28141D63825C0026326B /* BeeLifecycleGameHandler.m in Sources */,
 				487E28021D635D800026326B /* BaseBee.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
