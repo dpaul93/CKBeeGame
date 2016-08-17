@@ -12,9 +12,11 @@
 #import "DroneBee.h"
 #import "WorkerBee.h"
 
+static NSString * const kLifespanKeyPath = @"lifespan";
+
 @interface BeeLifecycleGameHandler()
 
-@property (strong, nonatomic) BeeDataProvider *provider;
+@property (strong, nonatomic) NSMutableArray<BaseBee*> *bees;
 
 @end
 
@@ -25,45 +27,49 @@
 -(instancetype)init {
     if(self = [super init]) {
         self.provider = [BeeDataProvider new];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beeLifespanDidChangeNotification:) name:kBeeLifespanDidChangeNotification object:nil];
+        self.bees = [self.provider generateBees].mutableCopy;
     }
     
     return self;
 }
 
 -(void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    self.bees = nil;
 }
 
-#pragma mark - Notification Handling
+#pragma mark - KVO
 
--(void)beeLifespanDidChangeNotification:(NSNotification*)notification {
-    BaseBee *bee = notification.object;
-    [self updateLifespanOfBee:bee];
-    if(bee.lifespan <= 0) {
-        [self endBeeLifespan:bee];
-        if([bee isKindOfClass:[QueenBee class]]) {
-            [self updateData];
-        } else {
-            [self.provider removeBee:bee];
-            if(!self.provider.bees.count) {
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if(context == BeeLifecycleKVOContext) {
+        BaseBee *bee = object;
+        [self updateLifespanOfBee:bee];
+        if(bee.lifespan <= 0) {
+            [self endBeeLifespan:bee];
+            [self removeBee:bee];
+            if([bee isKindOfClass:[QueenBee class]]) {
+                [self removeRemainingBees];
+            } else if(!self.bees.count) {
                 [self updateData];
             }
         }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 
 #pragma mark - Instance Methods
 
 -(void)hitRandomBee {
-    NSInteger randomIndex = arc4random_uniform((int)self.provider.bees.count);
-    BaseBee *bee = self.provider.bees[randomIndex];
+    NSInteger randomIndex = arc4random_uniform((int)self.bees.count);
+    BaseBee *bee = self.bees[randomIndex];
     [bee hitBee];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:kBeeLifespanDidChangeNotification object:bee];
 }
 
 -(void)removeBee:(BaseBee *)bee {
-    [self.provider removeBee:bee];
+    @try {
+        [bee removeObserver:self forKeyPath:kLifespanKeyPath context:BeeLifecycleKVOContext];
+    } @catch (NSException *exception) { }
+    [((NSMutableArray*)self.bees) removeObject:bee];
 }
 
 #pragma mark - Class Methods
@@ -78,16 +84,39 @@
     return _instance;
 }
 
-#pragma mark - Getters
+#pragma mark - Setters
 
--(NSArray<BaseBee *> *)bees {
-    return self.provider.bees;
+-(void)setBees:(NSMutableArray<BaseBee *> *)bees {
+    @try {
+        for (BaseBee *bee in _bees) {
+            [bee removeObserver:self forKeyPath:kLifespanKeyPath context:BeeLifecycleKVOContext];
+        }
+    } @catch (NSException *exception) { }
+
+    _bees = bees;
+
+    for (BaseBee *bee in _bees) {
+        [bee addObserver:self forKeyPath:kLifespanKeyPath options:NSKeyValueObservingOptionNew context:BeeLifecycleKVOContext];
+    }
 }
 
 #pragma mark - Helpers
 
+-(void)removeRemainingBees {
+    for (NSInteger i = 0; i < self.bees.count; i++) {
+        BaseBee *remainingBee = self.bees[i];
+        @try {
+            [remainingBee removeObserver:self forKeyPath:kLifespanKeyPath context:BeeLifecycleKVOContext];
+        } @catch (NSException *exception) { }
+        [remainingBee killBee];
+        [self updateLifespanOfBee:remainingBee];
+        [self endBeeLifespan:remainingBee];
+    }
+    [self updateData];
+}
+
 -(void)updateData {
-    [self.provider updateData];
+    self.bees = [self.provider generateBees].mutableCopy;
     if([self.delegate respondsToSelector:@selector(beeLifecycleHandlerDidUpdateData:)]) {
         [self.delegate beeLifecycleHandlerDidUpdateData:self];
     }

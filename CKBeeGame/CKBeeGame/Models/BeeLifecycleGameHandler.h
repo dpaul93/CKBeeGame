@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@class BaseBee;
+static void * const BeeLifecycleKVOContext = (void*)&BeeLifecycleKVOContext;
+
+@class BaseBee, BeeDataProvider;
 
 @protocol BeeLifecycleGameHandlerDelegate;
 
 @interface BeeLifecycleGameHandler : NSObject
 
+@property (strong, nonatomic) BeeDataProvider *provider;
 @property (strong, nonatomic, readonly) NSArray<BaseBee*> *bees;
 @property (weak, nonatomic) IBOutlet id<BeeLifecycleGameHandlerDelegate> delegate;
 
