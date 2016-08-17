@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, BeeDataProviderBeeTypeCount) {
         [temp addObjectsFromArray:bees];
     }
     
-    return temp;
+    return [self shuffleArray:temp];
 }
 
 -(NSArray*)generateBeeOfType:(Class)type count:(NSInteger)count {
@@ -73,6 +73,17 @@ typedef NS_ENUM(NSInteger, BeeDataProviderBeeTypeCount) {
     for (NSInteger i = 0; i < count; i++) {
         BaseBee *bee = [type new];
         [temp addObject:bee];
+    }
+    
+    return temp;
+}
+
+-(NSArray*)shuffleArray:(NSArray*)array {
+    NSMutableArray *temp = array.mutableCopy;
+    for (NSInteger i = 0; i < temp.count; i++) {
+        NSInteger previous = temp.count - i;
+        NSInteger randomIndex = (arc4random() % previous) + i;
+        [temp exchangeObjectAtIndex:i withObjectAtIndex:randomIndex];
     }
     
     return temp;
