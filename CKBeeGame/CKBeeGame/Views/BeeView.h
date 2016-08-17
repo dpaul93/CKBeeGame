@@ -12,8 +12,8 @@
 
 @interface BeeView : UIView
 
-@property (weak, nonatomic, readonly) UIImageView *beeImageView;
 @property (strong, nonatomic) BaseBee *bee;
+@property (assign, nonatomic) CGFloat lifespan;
 
 -(instancetype)initWithBee:(BaseBee*)bee;
 

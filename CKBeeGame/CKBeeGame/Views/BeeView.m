@@ -7,25 +7,19 @@
 //
 
 #import "BeeView.h"
+#import "LifespanView.h"
 #import "BaseBee.h"
 
 @interface BeeView()
 
-@property (weak, nonatomic, readwrite) UIImageView *beeImageView;
+@property (weak, nonatomic) UIImageView *beeImageView;
+@property (weak, nonatomic) LifespanView *lifespanView;
 
 @end
 
 @implementation BeeView
 
 #pragma mark - Initialization
-
--(instancetype)init {
-    if(self = [super init]) {
-        [self baseSetup];
-    }
-    
-    return self;
-}
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if(self = [super initWithFrame:frame]) {
@@ -48,7 +42,13 @@
 -(void)setBee:(BaseBee *)bee {
     _bee = bee;
     self.beeImageView.image = [UIImage imageNamed:_bee.imageName];
-    // TODO: add lifespan
+    self.lifespanView.maxProgress = _bee.maxLifespan;
+    self.lifespanView.progress = _bee.lifespan;
+}
+
+-(void)setLifespan:(CGFloat)lifespan {
+    self.lifespanView.progress = lifespan;
+    _lifespan = self.lifespanView.progress;
 }
 
 #pragma mark - Helpers
@@ -65,6 +65,16 @@
     [self.beeImageView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
     [self.beeImageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
     [self.beeImageView.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
+    
+    LifespanView *lifespan = [LifespanView new];
+    lifespan.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:lifespan];
+    self.lifespanView = lifespan;
+
+    [self.lifespanView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
+    [self.lifespanView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+    [self.lifespanView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    [self.lifespanView.heightAnchor constraintEqualToConstant:10.0f].active = YES;
 }
 
 @end
