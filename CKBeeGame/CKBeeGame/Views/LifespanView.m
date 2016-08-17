@@ -11,6 +11,7 @@
 @interface LifespanView()
 
 @property (weak, nonatomic) CAShapeLayer *progressLineLayer;
+@property (weak, nonatomic) UILabel *progressLabel;
 
 @end
 
@@ -20,15 +21,12 @@
 
 -(void)layoutSublayersOfLayer:(CALayer *)layer {
     [super layoutSublayersOfLayer:layer];
-    [self drawProgressLayerAnimated:YES];
-    self.progressLineLayer.frame = self.bounds;
-}
-
-#pragma mark - Setters
-
--(void)setFrame:(CGRect)frame {
-    [super setFrame:frame];
-    [self drawProgressLayerAnimated:YES];
+    if(!self.progressLineLayer) {
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3f];
+        [self drawProgressLayerAnimated:YES];
+        [self drawProgressLabel];
+        self.progressLineLayer.frame = self.bounds;
+    }
 }
 
 -(void)setProgress:(CGFloat)progress {
@@ -39,6 +37,7 @@
     
     if(_progress != previousValue) {
         [self updateProgressLineAnimated:YES previousValue:previousValue];
+        [self updateProgressLabel];
     }
 }
 
@@ -75,6 +74,28 @@
     animation.fillMode = kCAFillModeForwards;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     [self.progressLineLayer addAnimation:animation forKey:@"strokeEnd"];
+}
+
+-(void)drawProgressLabel {
+    [self.progressLabel removeFromSuperview];
+    self.progressLabel = nil;
+    
+    UILabel *progressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    progressLabel.font = [UIFont systemFontOfSize:11.0f];
+    progressLabel.textColor = [UIColor blackColor];
+    progressLabel.textAlignment = NSTextAlignmentCenter;
+    progressLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:progressLabel];
+    self.progressLabel = progressLabel;
+    [self updateProgressLabel];
+    [self.progressLabel.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
+    [self.progressLabel.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+    [self.progressLabel.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+    [self.progressLabel.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
+}
+
+-(void)updateProgressLabel {
+    self.progressLabel.text = [NSString stringWithFormat:@"%.f", self.progress];
 }
 
 @end
