@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class  BeeLifecycleGameHandler;
+
 @interface GameViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet BeeLifecycleGameHandler *gameHandler;
 
 @end
