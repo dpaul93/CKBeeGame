@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4807FFDD1D645E3300E9A278 /* LifespanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4807FFDC1D645E3300E9A278 /* LifespanView.m */; };
+		4807FFE11D64938F00E9A278 /* MockBee.m in Sources */ = {isa = PBXBuildFile; fileRef = 4807FFE01D64938F00E9A278 /* MockBee.m */; };
+		4807FFE41D64949C00E9A278 /* MockBee+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = 4807FFE31D64949C00E9A278 /* MockBee+Protected.m */; };
+		4807FFEA1D649DCB00E9A278 /* MockDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4807FFE91D649DCB00E9A278 /* MockDataProvider.m */; };
+		4807FFED1D649DE200E9A278 /* MockGameHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4807FFEC1D649DE200E9A278 /* MockGameHandler.m */; };
 		487E27D51D6355D00026326B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27D41D6355D00026326B /* main.m */; };
 		487E27D81D6355D00026326B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 487E27D71D6355D00026326B /* AppDelegate.m */; };
 		487E27DE1D6355D00026326B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487E27DC1D6355D00026326B /* Main.storyboard */; };
@@ -38,6 +42,14 @@
 /* Begin PBXFileReference section */
 		4807FFDB1D645E3300E9A278 /* LifespanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifespanView.h; sourceTree = "<group>"; };
 		4807FFDC1D645E3300E9A278 /* LifespanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifespanView.m; sourceTree = "<group>"; };
+		4807FFDF1D64938F00E9A278 /* MockBee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockBee.h; sourceTree = "<group>"; };
+		4807FFE01D64938F00E9A278 /* MockBee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockBee.m; sourceTree = "<group>"; };
+		4807FFE21D64949C00E9A278 /* MockBee+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MockBee+Protected.h"; sourceTree = "<group>"; };
+		4807FFE31D64949C00E9A278 /* MockBee+Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MockBee+Protected.m"; sourceTree = "<group>"; };
+		4807FFE81D649DCB00E9A278 /* MockDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockDataProvider.h; sourceTree = "<group>"; };
+		4807FFE91D649DCB00E9A278 /* MockDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockDataProvider.m; sourceTree = "<group>"; };
+		4807FFEB1D649DE200E9A278 /* MockGameHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockGameHandler.h; sourceTree = "<group>"; };
+		4807FFEC1D649DE200E9A278 /* MockGameHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockGameHandler.m; sourceTree = "<group>"; };
 		487E27D01D6355D00026326B /* CKBeeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKBeeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487E27D41D6355D00026326B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		487E27D61D6355D00026326B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +99,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4807FFDE1D64938600E9A278 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				4807FFDF1D64938F00E9A278 /* MockBee.h */,
+				4807FFE01D64938F00E9A278 /* MockBee.m */,
+				4807FFE21D64949C00E9A278 /* MockBee+Protected.h */,
+				4807FFE31D64949C00E9A278 /* MockBee+Protected.m */,
+				4807FFE81D649DCB00E9A278 /* MockDataProvider.h */,
+				4807FFE91D649DCB00E9A278 /* MockDataProvider.m */,
+				4807FFEB1D649DE200E9A278 /* MockGameHandler.h */,
+				4807FFEC1D649DE200E9A278 /* MockGameHandler.m */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
 		487E27C71D6355D00026326B = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +160,7 @@
 		487E27EC1D6355D00026326B /* CKBeeGameTests */ = {
 			isa = PBXGroup;
 			children = (
+				4807FFDE1D64938600E9A278 /* MockData */,
 				487E27ED1D6355D00026326B /* CKBeeGameTests.m */,
 				487E27EF1D6355D00026326B /* Info.plist */,
 			);
@@ -299,7 +327,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4807FFEA1D649DCB00E9A278 /* MockDataProvider.m in Sources */,
+				4807FFED1D649DE200E9A278 /* MockGameHandler.m in Sources */,
+				4807FFE11D64938F00E9A278 /* MockBee.m in Sources */,
 				487E27EE1D6355D00026326B /* CKBeeGameTests.m in Sources */,
+				4807FFE41D64949C00E9A278 /* MockBee+Protected.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
