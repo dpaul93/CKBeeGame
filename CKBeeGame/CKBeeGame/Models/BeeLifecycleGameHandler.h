@@ -15,7 +15,7 @@
 @interface BeeLifecycleGameHandler : NSObject
 
 @property (strong, nonatomic, readonly) NSArray<BaseBee*> *bees;
-@property (weak, nonatomic) id<BeeLifecycleGameHandlerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id<BeeLifecycleGameHandlerDelegate> delegate;
 
 -(void)hitRandomBee;
 -(void)removeBee:(BaseBee*)bee;
