@@ -26,4 +26,6 @@ extern NSString * const kBeeLifespanDidChangeNotification;
 @property (assign, nonatomic, readonly) NSInteger maxLifespan;
 @property (strong, nonatomic, readonly) NSString *imageName;
 
+-(void)killBee;
+
 @end

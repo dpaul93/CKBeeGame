@@ -7,6 +7,7 @@
 //
 
 #import "BaseBee.h"
+#import "BaseBee+Protected.h"
 
 NSString * const kBeeLifespanDidChangeNotification = @"BeeLifespanDidChangeNotification";
 
@@ -18,6 +19,10 @@ NSString * const kBeeLifespanDidChangeNotification = @"BeeLifespanDidChangeNotif
 
 -(void)hitBee {
     NSAssert(![self isMemberOfClass:[BaseBee class]], @"Base method should be overriden in child class.");
+}
+
+-(void)killBee {
+    [self setLifespan:0];
 }
 
 @end
