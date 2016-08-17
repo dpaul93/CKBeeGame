@@ -23,6 +23,7 @@ extern NSString * const kBeeLifespanDidChangeNotification;
 }
 
 @property (assign, nonatomic, readonly) NSInteger lifespan;
+@property (assign, nonatomic, readonly) NSInteger maxLifespan;
 @property (strong, nonatomic, readonly) NSString *imageName;
 
 @end

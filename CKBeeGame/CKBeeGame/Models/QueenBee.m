@@ -15,7 +15,7 @@
 
 -(instancetype)init {
     if(self = [super init]) {
-        pLifespan = 100;
+        pLifespan = self.maxLifespan;
         pImageName = @"queenBee";
     }
     
@@ -26,6 +26,10 @@
 
 -(void)hitBee {
     [self setLifespan:self.lifespan - 8];
+}
+
+-(NSInteger)maxLifespan {
+    return 100;
 }
 
 @end
